@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	id="org.apache.cordova.plugin.RingtonePicker"
+	version="1.0.0">
+
+	<engines>
+		<engine name="cordova" version=">=3.0.0" />
+	</engines>
+
+	<name>Ringtone Picker</name>
+	<description>Ringtone Picker plugin for Cordova 3.X that returns list of available ringtones.</description>
+	<author>Deepak Soni</author>
+	<keywords>ringtone picker, notification, sound</keywords>
+	<license>Apache 2.0 License</license>
+
+	<js-module src="www/ringtonePicker.js" name="RingtonePicker">
+		<clobbers target="RingtonePicker" />
+	</js-module>
+
+	<!-- Android -->
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="RingtonePicker" >
+				<param name="android-package" value="org.apache.cordova.plugin.RingtonePicker"/>
+			</feature>
+		</config-file>
+		<source-file src="src/android/RingtonePicker.java" target-dir="src/org/apache/cordova/plugin" />
+	</platform>
+</plugin>
