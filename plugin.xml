@@ -25,6 +25,10 @@
 				<param name="android-package" value="org.apache.cordova.plugin.RingtonePicker"/>
 			</feature>
 		</config-file>
+		
+		<config-file target="AndroidManifest.xml" parent="/*">
+			<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+		</config-file>
 		<source-file src="src/android/RingtonePicker.java" target-dir="src/org/apache/cordova/plugin" />
 	</platform>
 </plugin>
