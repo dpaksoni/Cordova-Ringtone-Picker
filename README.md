@@ -16,7 +16,7 @@ To show native ringtone picker, use the following code: <br />
 `RingtonePicker.pickRingtone(successCallBack,errorCallBack);`
 
 successCallBack will have the URI of selected sound. <br>
-ErrorCallBack will have an integer representing following errors:
+ErrorCallBack will have an integer representing following errors:<br>
 1 - User canceled operation <br>
 2 - Unknow error like returned URI was NULL
 
