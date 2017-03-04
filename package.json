@@ -1,6 +1,6 @@
 {
   "name": "ringtonepicker",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Ringtone Picker plugin for Cordova 3.X that returns list of available ringtones.",
   "cordova": {
     "id": "org.apache.cordova.plugin.RingtonePicker",

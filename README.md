@@ -10,6 +10,16 @@ To install the plugin, use the Cordova CLI and enter the following:<br />
 
 
 ## Use ##
+
+Update:
+To show native ringtone picker, use the following code: <br />
+`RingtonePicker.pickRingtone(successCallBack,errorCallBack);`
+
+successCallBack will have the URI of selected sound. <br>
+ErrorCallBack will have an integer representing following errors:
+1 - User canceled operation <br>
+2 - Unknow error like returned URI was NULL
+
 To get the list of available ringtones, use the following code: <br />
 `RingtonePicker.getSoundsList(successCallBack,errorCallBack);`
 
