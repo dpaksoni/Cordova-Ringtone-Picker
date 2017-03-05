@@ -17,7 +17,13 @@
     "notification",
     "sound",
     "ecosystem:cordova",
-    "cordova-android"
+    "cordova-android",
+    "ringtone chooser",
+    "ringtone pick",
+    "notification sound picker",
+    "notification sound",
+    "sound picker",
+    "sound chooser"
   ],
   "engines": [
     {
