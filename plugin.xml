@@ -9,7 +9,7 @@
 	</engines>
 
 	<name>Ringtone Picker</name>
-	<description>Ringtone Picker plugin for Cordova 3.X that returns list of available ringtones.</description>
+	<description>Ringtone Picker plugin for Cordova 3.X that presents native sound picker dialog.</description>
 	<author>Deepak Soni</author>
 	<keywords>ringtone picker, notification, sound</keywords>
 	<license>Apache 2.0 License</license>
