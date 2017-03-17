@@ -29,4 +29,7 @@ successCallBack will have a JSON Array of JSON Objects containing URI and name o
 To hide the dialog, use the following code:<br />
 `RingtonePicker.playSound(soundURI);`
 
+To play the uri a definited time, use :<br/>
+`RingtonePicker.timerPlaySound(soundURI, timeInMilliSeconds);`
+
 soundURI is the URI of sound that you want to play. 

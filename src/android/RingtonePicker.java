@@ -3,6 +3,7 @@ package org.apache.cordova.plugin;
 import android.app.Activity;
 import android.database.Cursor;
 import android.media.RingtoneManager;
+import android.media.Ringtone;
 import android.net.Uri;
 import android.util.Log;
 import org.apache.cordova.CallbackContext;
@@ -13,6 +14,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import android.content.Intent;
 
+
+
+
 public class RingtonePicker extends CordovaPlugin {
 	
 	private String LOG = "RINGTONEPICKER";
@@ -22,6 +26,7 @@ public class RingtonePicker extends CordovaPlugin {
 	private int ERR_UNKNOWN			= 2;
 
 	private CallbackContext mCallBackContext;
+	
 
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -43,6 +48,14 @@ public class RingtonePicker extends CordovaPlugin {
 		{
 			String uri = args.getString(0);
 			playSound(uri);
+			callbackContext.success();
+			return true;
+		}
+		else if (action.equals("timerPlaySound"))
+		{
+			String uri = args.getString(0);
+			int time = args.getInt(1);
+			timerPlaySound(uri, time);
 			callbackContext.success();
 			return true;
 		}
@@ -99,6 +112,22 @@ public class RingtonePicker extends CordovaPlugin {
 		Log.d(LOG,"Enter playSound uri = "+uri);
 
 		RingtoneManager.getRingtone(cordova.getActivity(), Uri.parse(uri)).play();
+	}
+	
+	public void timerPlaySound(final String uri, final int time)
+	{
+		cordova.getThreadPool().execute(new Runnable() {
+			public void run() {
+				Ringtone currentRingtone = RingtoneManager.getRingtone(cordova.getActivity(), Uri.parse(uri));
+				
+				currentRingtone.play();
+				try {
+					Thread.sleep(time);
+				} catch (InterruptedException ignore) {
+				}
+				currentRingtone.stop();
+			}
+		});
 	}
 
 	public void pickRingtone()
